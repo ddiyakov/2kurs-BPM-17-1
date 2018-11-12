@@ -6,4 +6,4 @@ project(diyakov_d_v)
 
 include(cmake/build_prefix.cmake)
 
-add_subdirectory(labs)
+add_subdirectory(prj.labs)

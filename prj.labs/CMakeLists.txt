@@ -1,0 +1,6 @@
+add_subdirectory(complex)
+add_subdirectory(rational)
+add_subdirectory(dynamical_array)
+add_subdirectory(matrix)
+add_subdirectory(queue_on_array)
+add_subdirectory(stack_on_list)
