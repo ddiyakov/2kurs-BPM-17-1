@@ -10,7 +10,10 @@ bool test1() {
 	t1.push(-1);
 	
 	StackOnList<int> t2(t1);
-	return t2.top() == t1.top() && t2.top() == -1;
+	t2.pop();
+	std::cout << t1 << std::endl;
+	std::cout << t2 << std::endl;
+	return -1 == t1.top() && 5 == t2.top();
 }
 
 int main()

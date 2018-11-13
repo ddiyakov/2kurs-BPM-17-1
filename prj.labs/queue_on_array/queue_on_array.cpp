@@ -80,3 +80,17 @@ int QueueOnArray::top() {
 	}
 }
 
+std::ostream& QueueOnArray::writeTo(std::ostream& ostrm) const {
+	ostrm << "( ";
+	for (int i = i_first; i < i_last; i++) {
+		ostrm << data_[i % size_] << " ";
+	}
+	ostrm << ")";
+	return ostrm;
+}
+
+std::ostream& operator<<(std::ostream& ostrm, const QueueOnArray& rhs) {
+	return rhs.writeTo(ostrm);
+}
+
+

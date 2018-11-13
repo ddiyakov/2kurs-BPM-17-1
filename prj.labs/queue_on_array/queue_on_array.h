@@ -13,6 +13,8 @@ public:
 	void pop();
 	int top();
 
+	std::ostream& writeTo(std::ostream& ostrm) const;
+
 	~QueueOnArray();
 private:
 	int* data_{ nullptr };
@@ -20,5 +22,7 @@ private:
 	int i_first{ 0 };
 	int i_last{ 1 };	
 };
+
+std::ostream& operator<<(std::ostream& ostrm, const QueueOnArray& rhs);
 
 #endif 
