@@ -5,5 +5,3 @@ add_subdirectory(matrix)
 add_subdirectory(queue_on_array)
 add_subdirectory(stack_on_list)
 add_subdirectory(tests)
-
-mv prj.labs/stack_on_list/stack_on_list.cpp prj.labs/tests/
