@@ -1,2 +1,5 @@
 built/
 bin.win64.vc2015.dbg/
+cmake/
+#build.ninja.win64
+#build.vc2015.win64
