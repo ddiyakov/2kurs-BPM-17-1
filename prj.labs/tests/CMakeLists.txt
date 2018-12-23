@@ -21,3 +21,7 @@ set_property(TARGET queue_on_array_test PROPERTY CXX_STANDARD 14)
 add_executable(stack_on_list_test stack_on_list_test.cpp)
 target_link_libraries(stack_on_list_test stack_on_list)
 set_property(TARGET stack_on_list_test PROPERTY CXX_STANDARD 14)
+
+add_executable(priority_queue_test priority_queue_test.cpp)
+target_link_libraries(priority_queue_test priority_queue)
+set_property(TARGET priority_queue_test PROPERTY CXX_STANDARD 14)

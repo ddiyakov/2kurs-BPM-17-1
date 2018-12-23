@@ -1,9 +1,16 @@
 #include <iostream>
 #include <sstream>
-#include "stack_on_list.h"
+#include "stack_on_list/stack_on_list.h"
 
 bool test1() {
 	StackOnList<int> t1;
+	try {
+		t1.pop();
+		std::cout << "not successful" << std::endl;
+	}
+	catch (const std::exception ex) {
+		std::cout << "successful" << std::endl;
+	}
 	t1.push(5);
 	t1.push(3);
 	t1.pop();
@@ -18,7 +25,5 @@ bool test1() {
 
 int main()
 {
-	if (test1()) {
-		std::cout << "Oh";
-	}
+	std::cout << test1() << std::endl;
 }
