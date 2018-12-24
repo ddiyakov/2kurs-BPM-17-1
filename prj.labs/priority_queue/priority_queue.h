@@ -4,7 +4,7 @@
 
 class PriorityQueue {
 public:
-	PriorityQueue() = default;
+
 	explicit PriorityQueue(int size);
 	PriorityQueue(const PriorityQueue &obj);
 	~PriorityQueue();
@@ -12,17 +12,18 @@ public:
 	bool isEmpty() const;
 	bool isFull() const;
 	int top() const;
-	int pop();
+	void pop();
+	void push(int value, int priority);
 
-	void enqueue(int value, int priority);
-
-	PriorityQueue &operator=(const PriorityQueue &rhs);
+	std::ostream& writeTo(std::ostream& ostrm) const;
 
 private:
-	int *data_;
-	int *priorities_;
-	int size_;
-	int end_;
+	int* values;
+	int* priots;
+	int size_{ 0 };
+	int end_{ 0 };
 };
+
+std::ostream& operator<<(std::ostream& ostrm, const PriorityQueue& rhs);
 
 #endif
