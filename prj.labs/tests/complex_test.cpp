@@ -2,63 +2,51 @@
 #include <sstream>
 #include "complex/complex.h"
 
-using namespace std;
-
-void testCreates()
-{
+void testCreates() {
     Complex t1(1);
-    cout << t1 << endl;
+    std::cout << t1 << std::endl;
     Complex t2(1.0, 5.5);
-    cout << t2 << endl;
-    cout << endl;
+    std::cout << t2 << std::endl;
+    std::cout << std::endl;
 }
 
-void testAriphmeticsAndEquals()
-{
+void testAriphmeticsAndEquals() {
     Complex t1(1);
     Complex t2(1.0, 5.5);
     Complex t3(0);
     t3 = t1 + t2;
     t1 += t2;
-    cout << (t1 == t3) << endl;
-    cout << (t1 == t2) << endl;
-    cout << (t1 != t2) <<  endl;
-    cout << endl;
+    std::cout << (t1 == t3) << std::endl;
+    std::cout << (t1 == t2) << std::endl;
+    std::cout << (t1 != t2) << std::endl;
+    std::cout << std::endl;
 }
 
-void testMultiple()
-{
+void testMultiple() {
     Complex t1(0);
     Complex t2(1.0, 5.5);
     Complex t3(2.0, 4.5);
-    cout << t2 << endl;
+    std::cout << t2 << std::endl;
     t2 *= t3;
-    cout << t2 << endl;
+    std::cout << t2 << std::endl;
     t2 /= t3;
-    cout << t2 << endl;
-    try 
-    {
+    std::cout << t2 << std::endl;
+    try {
         t2 /= t1;
-        cout << "not successful" << endl;
+        std::cout << "not successful" << std::endl;
+    } catch (const std::exception &) {
+        std::cout << "successful" << std::endl;
     }
-    catch (const std::exception&) 
-    {
-        cout << "successful" << endl;
-    }
-    try
-    {
+    try {
         t2 /= 0;
-        cout << "not successful" << endl;
+        std::cout << "not successful" << std::endl;
+    } catch (const std::exception &) {
+        std::cout << "successful" << std::endl;
     }
-    catch (const std::exception&)
-    {
-        cout << "successful" << endl;
-    }
-    cout << endl;
+    std::cout << std::endl;
 }
 
-int main()
-{
+int main() {
     testCreates();
     testAriphmeticsAndEquals();
     testMultiple();

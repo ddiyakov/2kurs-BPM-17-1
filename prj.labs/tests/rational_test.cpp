@@ -9,13 +9,11 @@ void testInit() {
     Rational test3(25, -5);
     Rational test4(-25, -5);
     Rational test5(-25, 5);
-    try
-    {
+    try {
         Rational test6(5, 0);
         cout << "not successful" << endl;
     }
-    catch (const std::exception&)
-    {
+    catch (const std::exception &) {
         cout << "successful" << endl;
     }
     cout << (test1 == test2) << endl;
@@ -43,7 +41,7 @@ void testMul() {
     cout << test2 << endl;
     test2 *= test2;
     cout << test2 << endl;
-    test2 /= test1; 
+    test2 /= test1;
     cout << test2 << endl;
     test2 *= -1;
     cout << test2 << endl;
@@ -51,21 +49,20 @@ void testMul() {
         test1 /= 0;
         cout << "not successful" << endl;
     }
-    catch (const std::exception&) {
+    catch (const std::exception &) {
         cout << "successful";
     }
     try {
         test1 /= test3;
         cout << "not successful" << endl;
     }
-    catch (const std::exception&) {
+    catch (const std::exception &) {
         cout << "successful";
     }
     cout << endl;
 }
 
-int main()
-{
+int main() {
     testInit();
     testMul();
     testSum();

@@ -4,7 +4,7 @@
 #include "priority_queue.h"
 
 PriorityQueue::PriorityQueue(int size)
-    : size_(size) {
+        : size_(size) {
     if (size < 0) {
         throw std::exception("Size should be not negative");
     }
@@ -13,7 +13,7 @@ PriorityQueue::PriorityQueue(int size)
 }
 
 PriorityQueue::PriorityQueue(const PriorityQueue &obj)
-    : size_(obj.size_), end_(obj.end_) {
+        : size_(obj.size_), end_(obj.end_) {
 
     values = new int[obj.size_];
     for (int i = 0; i < obj.size_; i++) {
@@ -82,7 +82,7 @@ void PriorityQueue::push(int value, int priority) {
     end_++;
 }
 
-std::ostream& PriorityQueue::writeTo(std::ostream& ostrm) const {
+std::ostream &PriorityQueue::writeTo(std::ostream &ostrm) const {
     ostrm << "( ";
     for (int i = 0; i < end_; i++) {
         ostrm << values[i] << " ";
@@ -91,6 +91,6 @@ std::ostream& PriorityQueue::writeTo(std::ostream& ostrm) const {
     return ostrm;
 }
 
-std::ostream& operator<<(std::ostream& ostrm, const PriorityQueue& rhs) {
+std::ostream &operator<<(std::ostream &ostrm, const PriorityQueue &rhs) {
     return rhs.writeTo(ostrm);
 }

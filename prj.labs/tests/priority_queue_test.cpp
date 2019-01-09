@@ -44,7 +44,7 @@ void testAndrey() {
         queue1.push(4, 1);
         queue1.push(9, 0);
     }
-    catch (const std::exception&) {
+    catch (const std::exception &) {
         std::cout << "Queue is full" << std::endl;
     }
 
@@ -58,13 +58,12 @@ void testAndrey() {
     try {
         queue3.pop();
     }
-    catch (const std::exception&) {
+    catch (const std::exception &) {
         std::cout << "queue3 is empty" << std::endl;
     }
 }
 
-int main()
-{
+int main() {
     testCreature();
     testAndrey();
 }

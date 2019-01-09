@@ -5,17 +5,16 @@
 
 QueueOnArray::QueueOnArray(const int size) {
     size_ = size;
-    data_ = new int[size_] {0};
+    data_ = new int[size_]{0};
 }
 
-QueueOnArray::QueueOnArray(const QueueOnArray& rhs) {
+QueueOnArray::QueueOnArray(const QueueOnArray &rhs) {
     size_ = rhs.size_;
-    data_ = new int[size_] {0};
+    data_ = new int[size_]{0};
     i_first = rhs.i_first % size_;
     i_last = rhs.i_last % size_;
 
-    for (int i(0); i < size_; i++)
-    {
+    for (int i(0); i < size_; i++) {
         data_[i] = rhs.data_[i];
     }
 }
@@ -24,10 +23,10 @@ QueueOnArray::~QueueOnArray() {
     delete[] data_;
 }
 
-QueueOnArray& QueueOnArray::operator=(const QueueOnArray& rhs) {
+QueueOnArray &QueueOnArray::operator=(const QueueOnArray &rhs) {
     if (this != &rhs) {
         if (size_ < rhs.size_) {
-            int* newData(new int[rhs.size_]);
+            int *newData(new int[rhs.size_]);
             delete[] data_;
             data_ = newData;
         }
@@ -41,8 +40,7 @@ void QueueOnArray::push(int a) {
     if (!isFull()) {
         data_[i_last % size_] = a;
         i_last++;
-    }
-    else {
+    } else {
         throw std::exception("Full queue");
     }
 }
@@ -58,8 +56,7 @@ bool QueueOnArray::isEmpty() {
 void QueueOnArray::pop() {
     if (!isEmpty()) {
         i_first++;
-    }
-    else {
+    } else {
         throw std::exception("Empty queue exception");
     }
 }
@@ -67,13 +64,12 @@ void QueueOnArray::pop() {
 int QueueOnArray::top() {
     if (!isEmpty()) {
         return data_[i_first];
-    }
-    else {
+    } else {
         throw std::exception("Empty queue exception");
     }
 }
 
-std::ostream& QueueOnArray::writeTo(std::ostream& ostrm) const {
+std::ostream &QueueOnArray::writeTo(std::ostream &ostrm) const {
     ostrm << "( ";
     for (int i = i_first; i < i_last; i++) {
         ostrm << data_[i % size_] << " ";
@@ -82,7 +78,7 @@ std::ostream& QueueOnArray::writeTo(std::ostream& ostrm) const {
     return ostrm;
 }
 
-std::ostream& operator<<(std::ostream& ostrm, const QueueOnArray& rhs) {
+std::ostream &operator<<(std::ostream &ostrm, const QueueOnArray &rhs) {
     return rhs.writeTo(ostrm);
 }
 

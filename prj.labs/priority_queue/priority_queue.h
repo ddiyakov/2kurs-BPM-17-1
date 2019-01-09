@@ -3,27 +3,33 @@
 #define PRIORITY_QUEUE_H
 
 class PriorityQueue {
-public:
+ public:
 
     explicit PriorityQueue(int size);
+
     PriorityQueue(const PriorityQueue &obj);
+
     ~PriorityQueue();
 
     bool isEmpty() const;
+
     bool isFull() const;
+
     int top() const;
+
     void pop();
+
     void push(int value, int priority);
 
-    std::ostream& writeTo(std::ostream& ostrm) const;
+    std::ostream &writeTo(std::ostream &ostrm) const;
 
-private:
-    int* values;
-    int* priots;
-    int size_{ 0 };
-    int end_{ 0 };
+ private:
+    int *values;
+    int *priots;
+    int size_{0};
+    int end_{0};
 };
 
-std::ostream& operator<<(std::ostream& ostrm, const PriorityQueue& rhs);
+std::ostream &operator<<(std::ostream &ostrm, const PriorityQueue &rhs);
 
 #endif
