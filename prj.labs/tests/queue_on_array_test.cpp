@@ -33,10 +33,10 @@ bool test2() {
     t1.push(8);
     try {
         t1.push(9);
-        std::cout << "not successful" << std::endl;
+        std::cout << "successful" << std::endl;
     }
     catch (const std::exception ex) {
-        std::cout << "successful" << std::endl;
+        std::cout << "not successful" << std::endl;
     }
     return 6 == t1.top();
 }

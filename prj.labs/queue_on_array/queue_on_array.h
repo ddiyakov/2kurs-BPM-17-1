@@ -5,7 +5,9 @@
 
 class QueueOnArray {
  public:
-    explicit QueueOnArray(const int size);
+    QueueOnArray();
+	 
+	QueueOnArray(const int size);
 
     QueueOnArray(const QueueOnArray &rhs);
 

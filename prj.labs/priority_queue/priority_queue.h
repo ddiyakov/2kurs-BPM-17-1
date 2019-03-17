@@ -4,8 +4,9 @@
 
 class PriorityQueue {
  public:
+	PriorityQueue() = default;
 
-    explicit PriorityQueue(int size);
+    PriorityQueue(int size);
 
     PriorityQueue(const PriorityQueue &obj);
 

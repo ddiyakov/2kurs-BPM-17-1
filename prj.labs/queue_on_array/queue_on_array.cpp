@@ -2,7 +2,6 @@
 #include <sstream>
 #include "queue_on_array.h"
 
-
 QueueOnArray::QueueOnArray(const int size) {
     size_ = size;
     data_ = new int[size_]{0};
@@ -37,16 +36,23 @@ QueueOnArray &QueueOnArray::operator=(const QueueOnArray &rhs) {
 }
 
 void QueueOnArray::push(int a) {
-    if (!isFull()) {
+    if (!((i_last - i_first) == size_)) {
         data_[i_last % size_] = a;
         i_last++;
     } else {
-        throw std::exception("Full queue");
-    }
-}
+        int* data_new = new int[size_ * 2];
 
-bool QueueOnArray::isFull() {
-    return (i_last - i_first) == size_;
+		for (int i = 0; i < size_; i++) {
+			data_new[i] = data_[(i_first + i) % size_];
+		}
+		delete[] data_;
+
+		data_ = data_new;
+		i_first = 0;
+		i_last = size_;
+		size_ = size_ * 2;
+		data_[i_last++] = a;
+    }
 }
 
 bool QueueOnArray::isEmpty() {
